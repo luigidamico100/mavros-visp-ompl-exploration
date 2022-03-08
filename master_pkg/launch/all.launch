@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<launch>
+
+	<include file="$(find px4_planner)/launch/fly_action_server.launch" >
+  	<arg name="output" value="log"/>
+  </include>
+  
+	<include file="$(find px4_planner)/launch/fly_action_client.launch" >
+  	<arg name="output" value="log"/>
+  </include> 	
+  
+	<include file="$(find qr_detector_pkg)/launch/qr_tracker.launch" >
+  	<arg name="output" value="log"/>
+  </include>
+  	
+  <include file="$(find master_pkg)/launch/master.launch" >
+  	<arg name="output" value="screen"/>
+  </include>
+  
+</launch>

@@ -1,0 +1,3 @@
+int32 qr_code
+---
+geometry_msgs/Point qr_position

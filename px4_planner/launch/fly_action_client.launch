@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<launch>
+	<arg name="output" default="screen"/>
+	
+  <arg name="_length_x" default="20"/>
+  <arg name="_length_y" default="10"/>
+  <arg name="_size_uav" default="1"/>
+  <arg name="_length_stride" default="2"/>
+  <arg name="_fixed_z" default="3.5"/>
+	
+<!--	launch the octomap_server-->
+  <include file="$(find px4_planner)/launch/octomap_mapping.launch" >
+  	<arg name="output" value="log"/>
+  </include>
+
+	<node name="fly_action_client" pkg="px4_planner" type="fly_action_client" output="$(arg output)" >
+		<param name="_length_x" value="$(arg _length_x)"/>
+		<param name="_length_y" value="$(arg _length_y)"/>
+		<param name="_size_uav" value="$(arg _size_uav)"/>
+		<param name="_length_stride" value="$(arg _length_stride)"/>
+		<param name="_fixed_z" value="$(arg _fixed_z)"/>
+	</node>
+
+  <node name="rviz" pkg="rviz" type="rviz" output="$(arg output)" args="-d $(find px4_planner)/resource/config.rviz"/>
+
+
+</launch>

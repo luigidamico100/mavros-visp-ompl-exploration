@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>master_pkg</name>
+  <version>0.0.0</version>
+  <description>The master_pkg package</description>
+
+  <maintainer email="luigi@todo.todo">luigi</maintainer>
+
+  <license>TODO</license>
+   <build_depend>px4_planner</build_depend> 
+   <exec_depend>px4_planner</exec_depend> 
+
+   <build_depend>qr_detector_pkg</build_depend> 
+   <exec_depend>qr_detector_pkg</exec_depend> 
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>cpp</build_depend>
+  <build_export_depend>cpp</build_export_depend>
+  <exec_depend>cpp</exec_depend>
+
+
+  <export>
+
+  </export>
+</package>

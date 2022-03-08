@@ -1,0 +1,90 @@
+#--------IRIS------------------------------------------------------------------------
+add_custom_command(OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/models/iris/iris.sdf
+  WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+  COMMAND rm -f ${CMAKE_CURRENT_SOURCE_DIR}/models/iris/iris.sdf
+  COMMAND ${PYTHON_EXECUTABLE} ${scripts_dir}/xacro.py -o  ${rotors_description_dir}/urdf/iris/iris_base.urdf  ${rotors_description_dir}/urdf/iris/iris_base.xacro enable_mavlink_interface:=${enable_mavlink_interface} enable_ground_truth:=${enable_ground_truth} enable_wind:=${enable_wind} enable_logging:=${enable_logging} rotors_description_dir:=${rotors_description_dir} send_vision_estimation:=${send_vision_estimation} send_odometry:=${send_odometry}
+  COMMAND gz sdf -p  ${rotors_description_dir}/urdf/iris/iris_base.urdf >> ${CMAKE_CURRENT_SOURCE_DIR}/models/iris/iris.sdf#
+  COMMAND rm -f ${rotors_description_dir}/urdf/iris/iris_base.urdf
+  DEPENDS ${rotors_description_dir}/urdf/iris/iris.xacro
+  DEPENDS ${rotors_description_dir}/urdf/iris/iris_base.xacro
+  DEPENDS ${rotors_description_dir}/urdf/include/component_snippets.xacro
+  )
+add_custom_target(iris_sdf ALL DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/models/iris/iris.sdf)
+#--------IRIS------------------------------------------------------------------------
+
+
+#--------IRIS SMC------------------------------------------------------------------------
+set(model_name "iris_smc")
+add_custom_command(OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/models/${model_name}/${model_name}.sdf
+  WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+  COMMAND rm -f ${CMAKE_CURRENT_SOURCE_DIR}/models/${model_name}/${model_name}.sdf
+  COMMAND ${PYTHON_EXECUTABLE} ${scripts_dir}/xacro.py -o  ${rotors_description_dir}/urdf/${model_name}/${model_name}_base.urdf  ${rotors_description_dir}/urdf/${model_name}/${model_name}_base.xacro enable_mavlink_interface:='false' enable_ros_interface='true' enable_ground_truth:=${enable_ground_truth} enable_wind:=${enable_wind} enable_logging:=${enable_logging} rotors_description_dir:=${rotors_description_dir} send_vision_estimation:=${send_vision_estimation} send_odometry:=${send_odometry} enable_camera:=${enable_camera} enable_laser:='true' enable_depth:='true' model_name:=${model_name}
+  COMMAND gz sdf -p  ${rotors_description_dir}/urdf/${model_name}/${model_name}_base.urdf >> ${CMAKE_CURRENT_SOURCE_DIR}/models/${model_name}/${model_name}.sdf
+  COMMAND rm -f ${rotors_description_dir}/urdf/${model_name}/${model_name}_base.urdf
+  DEPENDS ${rotors_description_dir}/urdf/${model_name}/${model_name}.xacro
+  DEPENDS ${rotors_description_dir}/urdf/${model_name}/${model_name}_base.xacro
+  DEPENDS ${rotors_description_dir}/urdf/include/component_snippets.xacro
+  )
+add_custom_target(${model_name}_sdf ALL DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/models/${model_name}/${model_name}.sdf)
+
+#--------IRIS------------------------------------------------------------------------
+
+
+set(model_name "tarot")
+add_custom_command(OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/models/${model_name}/${model_name}.sdf
+  WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+  COMMAND rm -f ${CMAKE_CURRENT_SOURCE_DIR}/models/${model_name}/${model_name}.sdf
+  COMMAND ${PYTHON_EXECUTABLE} ${scripts_dir}/xacro.py -o  ${rotors_description_dir}/urdf/${model_name}/${model_name}_base.urdf  ${rotors_description_dir}/urdf/${model_name}/${model_name}_base.xacro enable_mavlink_interface:=${enable_mavlink_interface} enable_ground_truth:=${enable_ground_truth} enable_wind:=${enable_wind} enable_logging:=${enable_logging} rotors_description_dir:=${rotors_description_dir} send_vision_estimation:=${send_vision_estimation} send_odometry:=${send_odometry} enable_camera:=true enable_laser:=${enable_laser} enable_depth:='true' model_name:=${model_name}
+  COMMAND gz sdf -p  ${rotors_description_dir}/urdf/${model_name}/${model_name}_base.urdf >> ${CMAKE_CURRENT_SOURCE_DIR}/models/${model_name}/${model_name}.sdf
+  COMMAND rm -f ${rotors_description_dir}/urdf/${model_name}/${model_name}_base.urdf
+  DEPENDS ${rotors_description_dir}/urdf/${model_name}/${model_name}.xacro
+  DEPENDS ${rotors_description_dir}/urdf/${model_name}/${model_name}_base.xacro
+  DEPENDS ${rotors_description_dir}/urdf/include/component_snippets.xacro
+  )
+add_custom_target(${model_name}_sdf ALL DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/models/${model_name}/${model_name}.sdf)
+
+
+set(model_name "tarot_tilt")
+add_custom_command(OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/models/${model_name}/${model_name}.sdf
+  WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+  COMMAND rm -f ${CMAKE_CURRENT_SOURCE_DIR}/models/${model_name}/${model_name}.sdf
+  COMMAND ${PYTHON_EXECUTABLE} ${scripts_dir}/xacro.py -o  ${rotors_description_dir}/urdf/${model_name}/${model_name}_base.urdf  ${rotors_description_dir}/urdf/${model_name}/${model_name}_base.xacro enable_mavlink_interface:='false' enable_ground_truth:=${enable_ground_truth} enable_wind:=${enable_wind} enable_logging:=${enable_logging} rotors_description_dir:=${rotors_description_dir} send_vision_estimation:=${send_vision_estimation} send_odometry:=${send_odometry} enable_camera:=${enable_camera} enable_laser:=${enable_laser} enable_depth:=${enable_depth} model_name:=${model_name}
+  COMMAND gz sdf -p  ${rotors_description_dir}/urdf/${model_name}/${model_name}_base.urdf >> ${CMAKE_CURRENT_SOURCE_DIR}/models/${model_name}/${model_name}.sdf
+  COMMAND rm -f ${rotors_description_dir}/urdf/${model_name}/${model_name}_base.urdf
+  DEPENDS ${rotors_description_dir}/urdf/${model_name}/${model_name}.xacro
+  DEPENDS ${rotors_description_dir}/urdf/${model_name}/${model_name}_base.xacro
+  DEPENDS ${rotors_description_dir}/urdf/include/component_snippets.xacro
+  DEPENDS ${rotors_description_dir}/urdf/include/tilt_rotor.xacro
+  )
+add_custom_target(${model_name}_sdf ALL DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/models/${model_name}/${model_name}.sdf)
+
+
+set(model_name "hexa")
+add_custom_command(OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/models/${model_name}/${model_name}.sdf
+  WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+  COMMAND rm -f ${CMAKE_CURRENT_SOURCE_DIR}/models/${model_name}/${model_name}.sdf
+  COMMAND ${PYTHON_EXECUTABLE} ${scripts_dir}/xacro.py -o  ${rotors_description_dir}/urdf/${model_name}/${model_name}_base.urdf  ${rotors_description_dir}/urdf/${model_name}/${model_name}_base.xacro enable_mavlink_interface:='false' enable_ros_interface='true' enable_ground_truth:=${enable_ground_truth} enable_wind:=${enable_wind} enable_logging:=${enable_logging} rotors_description_dir:=${rotors_description_dir} send_vision_estimation:=${send_vision_estimation} send_odometry:=${send_odometry} enable_camera:=${enable_camera} enable_laser:=${enable_laser} enable_depth:=${enable_depth} model_name:=${model_name}
+  COMMAND gz sdf -p  ${rotors_description_dir}/urdf/${model_name}/${model_name}_base.urdf >> ${CMAKE_CURRENT_SOURCE_DIR}/models/${model_name}/${model_name}.sdf
+  COMMAND rm -f ${rotors_description_dir}/urdf/${model_name}/${model_name}_base.urdf
+  DEPENDS ${rotors_description_dir}/urdf/${model_name}/${model_name}.xacro
+  DEPENDS ${rotors_description_dir}/urdf/${model_name}/${model_name}_base.xacro
+  DEPENDS ${rotors_description_dir}/urdf/include/component_snippets.xacro
+  DEPENDS ${rotors_description_dir}/urdf/include/tilt_rotor.xacro
+  )
+add_custom_target(${model_name}_sdf ALL DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/models/${model_name}/${model_name}.sdf)
+
+
+set(model_name "hexa_tilt")
+add_custom_command(OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/models/${model_name}/${model_name}.sdf
+  WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+  COMMAND rm -f ${CMAKE_CURRENT_SOURCE_DIR}/models/${model_name}/${model_name}.sdf
+  COMMAND ${PYTHON_EXECUTABLE} ${scripts_dir}/xacro.py -o  ${rotors_description_dir}/urdf/${model_name}/${model_name}_base.urdf  ${rotors_description_dir}/urdf/${model_name}/${model_name}_base.xacro enable_mavlink_interface:='false' enable_ros_interface='true' enable_ground_truth:=${enable_ground_truth} enable_wind:=${enable_wind} enable_logging:=${enable_logging} rotors_description_dir:=${rotors_description_dir} send_vision_estimation:=${send_vision_estimation} send_odometry:=${send_odometry} enable_camera:=${enable_camera} enable_laser:=${enable_laser} enable_depth:=${enable_depth} model_name:=${model_name}
+  COMMAND gz sdf -p  ${rotors_description_dir}/urdf/${model_name}/${model_name}_base.urdf >> ${CMAKE_CURRENT_SOURCE_DIR}/models/${model_name}/${model_name}.sdf
+  COMMAND rm -f ${rotors_description_dir}/urdf/${model_name}/${model_name}_base.urdf
+  DEPENDS ${rotors_description_dir}/urdf/${model_name}/${model_name}.xacro
+  DEPENDS ${rotors_description_dir}/urdf/${model_name}/${model_name}_base.xacro
+  DEPENDS ${rotors_description_dir}/urdf/include/component_snippets.xacro
+  DEPENDS ${rotors_description_dir}/urdf/include/tilt_rotor.xacro
+  )
+add_custom_target(${model_name}_sdf ALL DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/models/${model_name}/${model_name}.sdf)
+

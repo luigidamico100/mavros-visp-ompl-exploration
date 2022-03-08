@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<gazebo version="1.2">
+   <model name="qr_base">
+    <static>true</static>
+    <pose>0 0 0 0 0 0</pose>
+    <link name="qr_base">
+      <collision name="collision">
+        <geometry>
+
+          <mesh>
+            <uri>model://qr_base/meshes/qr_base.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://qr_base/meshes/qr_base.dae</uri>
+          </mesh>
+        </geometry>
+        <cast_shadows>false</cast_shadows>
+      </visual>
+    </link>
+
+  </model>
+</gazebo>

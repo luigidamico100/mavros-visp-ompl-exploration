@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+    <model name="qr_id1">
+    <static>true</static>
+    <pose>0 0 0 0 0 0</pose>
+
+    <link name="base">
+      <collision name="collision">
+        <geometry>
+
+          <mesh>
+            <uri>model://qr_base/meshes/qr_base.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://qr_base/meshes/qr_base.dae</uri>
+          </mesh>
+        </geometry>
+        <cast_shadows>false</cast_shadows>
+      </visual>
+    </link>
+
+		<joint name="base_marker_joint" type="fixed">
+			<parent>base</parent>
+			<child>id1_25cm</child>
+		</joint>
+
+
+		<link name="id2">
+    	<pose>0 0 0.01 0 0 1.57</pose>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://id2/meshes/id2.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://id2/meshes/id2.dae</uri>
+          </mesh>
+        </geometry>
+        <cast_shadows>false</cast_shadows>
+      </visual>
+    </link>
+
+
+
+  </model>
+</sdf>

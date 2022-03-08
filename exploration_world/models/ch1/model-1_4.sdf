@@ -1,0 +1,466 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+ <model name="ch1">
+    <static>true</static>
+    <pose>20 10 0.05 0 0 3.1415</pose>
+    <link name="ground">
+      <collision name="collision">
+        <geometry>
+
+          <mesh>
+            <uri>model://ch1/meshes/ch1_map11000.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://ch1/meshes/ch1.dae</uri>
+          </mesh>
+        </geometry>
+        <cast_shadows>false</cast_shadows>
+      </visual>
+    </link>
+
+		<joint name="ground_p0_joint" type="fixed">
+			<parent>ground</parent>
+			<child>p3_purple_link</child>
+		</joint>
+
+		<link name="p3_red_link">
+    	<pose>0 10.3 0 0 0 0</pose>
+			<collision name="collision">
+				<geometry>
+				  <mesh>
+				    <uri>model://ch1/meshes/palo11000.stl</uri>
+				  </mesh>
+				</geometry>
+			</collision>
+			<visual name="visual">
+				<geometry>
+				  <mesh>
+				    <uri>model://ch1/meshes/p3_red.dae</uri>
+				  </mesh>
+				</geometry>
+				<cast_shadows>false</cast_shadows>
+			</visual>
+		</link>
+
+		<joint name="ground_p1_joint" type="fixed">
+			<parent>ground</parent>
+			<child>p1_blue_link</child>
+		</joint>
+
+		<link name="p1_blue_link">
+    	<pose>5 10.3 0 0 0 0</pose>
+			<collision name="collision">
+				<geometry>
+				  <mesh>
+				    <uri>model://ch1/meshes/palo11000.stl</uri>
+				  </mesh>
+				</geometry>
+			</collision>
+			<visual name="visual">
+				<geometry>
+				  <mesh>
+				    <uri>model://ch1/meshes/p4_blue.dae</uri>
+				  </mesh>
+				</geometry>
+				<cast_shadows>false</cast_shadows>
+			</visual>
+		</link>
+
+		<joint name="ground_p2_joint" type="fixed">
+			<parent>ground</parent>
+			<child>p2_green_water_link</child>
+		</joint>
+
+		<link name="p2_green_water_link">
+    	<pose>20 10.3 0 0 0 0</pose>
+			<collision name="collision">
+				<geometry>
+				  <mesh>
+				    <uri>model://ch1/meshes/palo11000.stl</uri>
+				  </mesh>
+				</geometry>
+			</collision>
+			<visual name="visual">
+				<geometry>
+				  <mesh>
+				    <uri>model://ch1/meshes/p5_green_water.dae</uri>
+				  </mesh>
+				</geometry>
+				<cast_shadows>false</cast_shadows>
+			</visual>
+		</link>
+
+
+		<joint name="ground_p3_joint" type="fixed">
+			<parent>ground</parent>
+			<child>p3_green_link</child>
+		</joint>
+
+		<link name="p3_green_link">
+    	<pose>0 -0.3 0 0 0 0</pose>
+			<collision name="collision">
+				<geometry>
+				  <mesh>
+				    <uri>model://ch1/meshes/palo11000.stl</uri>
+				  </mesh>
+				</geometry>
+			</collision>
+			<visual name="visual">
+				<geometry>
+				  <mesh>
+				    <uri>model://ch1/meshes/p1_purple.dae</uri>
+				  </mesh>
+				</geometry>
+				<cast_shadows>false</cast_shadows>
+			</visual>
+		</link>
+
+		<joint name="ground_p4_joint" type="fixed">
+			<parent>ground</parent>
+			<child>p4_heavenly_link</child>
+		</joint>
+
+		<link name="p4_heavenly_link">
+    	<pose>5 -0.3 0 0 0 0</pose>
+			<collision name="collision">
+				<geometry>
+				  <mesh>
+				    <uri>model://ch1/meshes/palo11000.stl</uri>
+				  </mesh>
+				</geometry>
+			</collision>
+			<visual name="visual">
+				<geometry>
+				  <mesh>
+				    <uri>model://ch1/meshes/p2_heavenly.dae</uri>
+				  </mesh>
+				</geometry>
+				<cast_shadows>false</cast_shadows>
+			</visual>
+		</link>
+
+		<joint name="ground_p5_joint" type="fixed">
+			<parent>ground</parent>
+			<child>p2_purple_link</child>
+		</joint>
+
+		<link name="p5_purple_link">
+    	<pose>20 -0.3 0 0 0 0</pose>
+			<collision name="collision">
+				<geometry>
+				  <mesh>
+				    <uri>model://ch1/meshes/palo11000.stl</uri>
+				  </mesh>
+				</geometry>
+			</collision>
+			<visual name="visual">
+				<geometry>
+				  <mesh>
+				    <uri>model://ch1/meshes/p0_green.dae</uri>
+				  </mesh>
+				</geometry>
+				<cast_shadows>false</cast_shadows>
+			</visual>
+		</link>
+
+
+		<joint name="ground_rete_1_top" type="fixed">
+			<parent>ground</parent>
+			<child>rete_top_1_link</child>
+		</joint>
+
+		<link name="rete_top_1_link">
+    	<pose>20 0 0 0 0 0</pose>
+			<collision name="collision">
+				<geometry>
+				  <mesh>
+				    <uri>model://ch1/meshes/rete.stl</uri>
+				  </mesh>
+				</geometry>
+			</collision>
+			<visual name="visual">
+				<geometry>
+				  <mesh>
+				    <uri>model://ch1/meshes/rete.dae</uri>
+				  </mesh>
+				</geometry>
+				<cast_shadows>false</cast_shadows>
+			</visual>
+		</link>
+
+
+		<joint name="ground_rete_2_top" type="fixed">
+			<parent>ground</parent>
+			<child>rete_top_2_link</child>
+		</joint>
+
+		<link name="rete_top_2_link">
+    	<pose>20 5 0 0 0 0</pose>
+			<collision name="collision">
+				<geometry>
+				  <mesh>
+				    <uri>model://ch1/meshes/rete.stl</uri>
+				  </mesh>
+				</geometry>
+			</collision>
+			<visual name="visual">
+				<geometry>
+				  <mesh>
+				    <uri>model://ch1/meshes/rete.dae</uri>
+				  </mesh>
+				</geometry>
+				<cast_shadows>false</cast_shadows>
+			</visual>
+		</link>
+
+
+		<joint name="ground_rete_1_bottom" type="fixed">
+			<parent>ground</parent>
+			<child>rete_bottom_1_link</child>
+		</joint>
+
+		<link name="rete_bottom_1_link">
+    	<pose>0 0 0 0 0 0</pose>
+			<collision name="collision">
+				<geometry>
+				  <mesh>
+				    <uri>model://ch1/meshes/rete.stl</uri>
+				  </mesh>
+				</geometry>
+			</collision>
+			<visual name="visual">
+				<geometry>
+				  <mesh>
+				    <uri>model://ch1/meshes/rete.dae</uri>
+				  </mesh>
+				</geometry>
+				<cast_shadows>false</cast_shadows>
+			</visual>
+		</link>
+
+
+		<joint name="ground_rete_2_bottom" type="fixed">
+			<parent>ground</parent>
+			<child>rete_bottom_2_link</child>
+		</joint>
+
+		<link name="rete_bottom_2_link">
+    	<pose>0 5 0 0 0 0</pose>
+			<collision name="collision">
+				<geometry>
+				  <mesh>
+				    <uri>model://ch1/meshes/rete.stl</uri>
+				  </mesh>
+				</geometry>
+			</collision>
+			<visual name="visual">
+				<geometry>
+				  <mesh>
+				    <uri>model://ch1/meshes/rete.dae</uri>
+				  </mesh>
+				</geometry>
+				<cast_shadows>false</cast_shadows>
+			</visual>
+		</link>
+
+		<joint name="ground_rete_1_left" type="fixed">
+			<parent>ground</parent>
+			<child>rete_left_1_link</child>
+		</joint>
+
+		<link name="rete_left_1_link">
+    	<pose>5 -0.3 0 0 0 1.57</pose>
+			<collision name="collision">
+				<geometry>
+				  <mesh>
+				    <uri>model://ch1/meshes/rete.stl</uri>
+				  </mesh>
+				</geometry>
+			</collision>
+			<visual name="visual">
+				<geometry>
+				  <mesh>
+				    <uri>model://ch1/meshes/rete.dae</uri>
+				  </mesh>
+				</geometry>
+				<cast_shadows>false</cast_shadows>
+			</visual>
+		</link>
+
+		<joint name="ground_rete_2_left" type="fixed">
+			<parent>ground</parent>
+			<child>rete_left_2_link</child>
+		</joint>
+
+		<link name="rete_left_2_link">
+    	<pose>10 -0.3 0 0 0 1.57</pose>
+			<collision name="collision">
+				<geometry>
+				  <mesh>
+				    <uri>model://ch1/meshes/rete.stl</uri>
+				  </mesh>
+				</geometry>
+			</collision>
+			<visual name="visual">
+				<geometry>
+				  <mesh>
+				    <uri>model://ch1/meshes/rete.dae</uri>
+				  </mesh>
+				</geometry>
+				<cast_shadows>false</cast_shadows>
+			</visual>
+		</link>
+
+
+		<joint name="ground_rete_3_left" type="fixed">
+			<parent>ground</parent>
+			<child>rete_left_3_link</child>
+		</joint>
+
+		<link name="rete_left_3_link">
+    	<pose>15 -0.3 0 0 0 1.57</pose>
+			<collision name="collision">
+				<geometry>
+				  <mesh>
+				    <uri>model://ch1/meshes/rete.stl</uri>
+				  </mesh>
+				</geometry>
+			</collision>
+			<visual name="visual">
+				<geometry>
+				  <mesh>
+				    <uri>model://ch1/meshes/rete.dae</uri>
+				  </mesh>
+				</geometry>
+				<cast_shadows>false</cast_shadows>
+			</visual>
+		</link>
+
+	<joint name="ground_rete_4_left" type="fixed">
+			<parent>ground</parent>
+			<child>rete_left_4_link</child>
+		</joint>
+
+		<link name="rete_left_4_link">
+    	<pose>20 -0.3 0 0 0 1.57</pose>
+			<collision name="collision">
+				<geometry>
+				  <mesh>
+				    <uri>model://ch1/meshes/rete.stl</uri>
+				  </mesh>
+				</geometry>
+			</collision>
+			<visual name="visual">
+				<geometry>
+				  <mesh>
+				    <uri>model://ch1/meshes/rete.dae</uri>
+				  </mesh>
+				</geometry>
+				<cast_shadows>false</cast_shadows>
+			</visual>
+		</link>
+
+		<joint name="ground_rete_1_right" type="fixed">
+			<parent>ground</parent>
+			<child>rete_right_1_link</child>
+		</joint>
+
+		<link name="rete_right_1_link">
+    	<pose>5 10.3 0 0 0 1.57</pose>
+			<collision name="collision">
+				<geometry>
+				  <mesh>
+				    <uri>model://ch1/meshes/rete.stl</uri>
+				  </mesh>
+				</geometry>
+			</collision>
+			<visual name="visual">
+				<geometry>
+				  <mesh>
+				    <uri>model://ch1/meshes/rete.dae</uri>
+				  </mesh>
+				</geometry>
+				<cast_shadows>false</cast_shadows>
+			</visual>
+		</link>
+
+
+
+		<joint name="ground_rete_2_right" type="fixed">
+			<parent>ground</parent>
+			<child>rete_right_2_link</child>
+		</joint>
+
+		<link name="rete_right_2_link">
+    	<pose>10 10.3 0 0 0 1.57</pose>
+			<collision name="collision">
+				<geometry>
+				  <mesh>
+				    <uri>model://ch1/meshes/rete.stl</uri>
+				  </mesh>
+				</geometry>
+			</collision>
+			<visual name="visual">
+				<geometry>
+				  <mesh>
+				    <uri>model://ch1/meshes/rete.dae</uri>
+				  </mesh>
+				</geometry>
+				<cast_shadows>false</cast_shadows>
+			</visual>
+		</link>
+
+
+		<joint name="ground_rete_3_right" type="fixed">
+			<parent>ground</parent>
+			<child>rete_right_3_link</child>
+		</joint>
+
+		<link name="rete_right_3_link">
+    	<pose>15 10.3 0 0 0 1.57</pose>
+			<collision name="collision">
+				<geometry>
+				  <mesh>
+				    <uri>model://ch1/meshes/rete.stl</uri>
+				  </mesh>
+				</geometry>
+			</collision>
+			<visual name="visual">
+				<geometry>
+				  <mesh>
+				    <uri>model://ch1/meshes/rete.dae</uri>
+				  </mesh>
+				</geometry>
+				<cast_shadows>false</cast_shadows>
+			</visual>
+		</link>
+
+	<joint name="ground_rete_4_right" type="fixed">
+			<parent>ground</parent>
+			<child>rete_right_4_link</child>
+		</joint>
+
+		<link name="rete_right_4_link">
+    	<pose>20 10.3 0 0 0 1.57</pose>
+			<collision name="collision">
+				<geometry>
+				  <mesh>
+				    <uri>model://ch1/meshes/rete.stl</uri>
+				  </mesh>
+				</geometry>
+			</collision>
+			<visual name="visual">
+				<geometry>
+				  <mesh>
+				    <uri>model://ch1/meshes/rete.dae</uri>
+				  </mesh>
+				</geometry>
+				<cast_shadows>false</cast_shadows>
+			</visual>
+		</link>
+  </model>
+</sdf>

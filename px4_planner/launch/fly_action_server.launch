@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<launch>
+	<arg name="output" default="screen"/>
+<!--		pos PID parameters-->
+  <arg name="Kp_pos" default="2.2"/>
+  <arg name="Ki_pos" default="0.005"/>
+  <arg name="Kd1_pos" default="0"/>
+  <arg name="Kd2_pos" default="0"/>
+  <arg name="PID_u_max_pos" default="5000"/>
+  <arg name="PID_u_min_pos" default="-5000"/>
+
+<!--		yaw PID parameters-->
+  <arg name="Kp_yaw" default="1"/>
+  <arg name="Ki_yaw" default="0.0001"/>
+  <arg name="Kd1_yaw" default="0"/>
+  <arg name="Kd2_yaw" default="0"/>
+  <arg name="PID_u_max_yaw" default="30"/>
+  <arg name="PID_u_min_yaw" default="-30"/>
+
+<!--		land PID parameters-->
+  <arg name="Kp_land" default="1"/>
+  <arg name="Ki_land" default="0.001"/>
+  <arg name="Kd1_land" default="0"/>
+  <arg name="Kd2_land" default="0"/>
+  <arg name="PID_u_max_land" default="300"/>
+  <arg name="PID_u_min_land" default="-300"/>
+	
+<!--output="screen" to read the ROS_INFO msg -->
+	<node name="fly_action_server" pkg="px4_planner" type="fly_action_server" output="$(arg output)" >  
+<!--		pos PID parameters-->
+		<param name="Kp_pos" value="$(arg Kp_pos)"/>
+		<param name="Ki_pos" value="$(arg Ki_pos)"/>
+		<param name="Kd1_pos" value="$(arg Kd1_pos)"/>
+		<param name="Kd2_pos" value="$(arg Kd2_pos)"/>
+		<param name="PID_u_max_pos" value="$(arg PID_u_max_pos)"/>
+		<param name="PID_u_min_pos" value="$(arg PID_u_min_pos)"/>
+<!--		yaw PID parameters-->
+		<param name="Kp_yaw" value="$(arg Kp_yaw)"/>
+		<param name="Ki_yaw" value="$(arg Ki_yaw)"/>
+		<param name="Kd1_yaw" value="$(arg Kd1_yaw)"/>
+		<param name="Kd2_yaw" value="$(arg Kd2_yaw)"/>
+		<param name="PID_u_max_yaw" value="$(arg PID_u_max_yaw)"/>
+		<param name="PID_u_min_yaw" value="$(arg PID_u_min_yaw)"/>
+<!--		land PID parameters-->
+		<param name="Kp_land" value="$(arg Kp_land)"/>
+		<param name="Ki_land" value="$(arg Ki_land)"/>
+		<param name="Kd1_land" value="$(arg Kd1_land)"/>
+		<param name="Kd2_land" value="$(arg Kd2_land)"/>
+		<param name="PID_u_max_land" value="$(arg PID_u_max_land)"/>
+		<param name="PID_u_min_land" value="$(arg PID_u_min_land)"/>
+	</node>
+
+
+
+</launch>

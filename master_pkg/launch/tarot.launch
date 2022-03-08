@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<launch>
+
+	    <!-- vehicle pose -->
+    <arg name="x" default="0.5"/>
+    <arg name="y" default="1.5"/>
+    <arg name="z" default="0.3"/>
+    <arg name="world" default="$(find exploration_world)/worlds/ch1.world"/>	
+    <!-- vehicle model and world -->
+ <env name="GAZEBO_MODEL_PATH" value="$(find exploration_world)/models:$(optenv GAZEBO_MODEL_PATH)" />
+ 
+	<include file="$(find px4)/Tools/sitl_gazebo/launch/tarot/tarot.launch" >
+  	<arg name="x" value="$(arg x)"/>
+		<arg name="y" value="$(arg y)"/>
+		<arg name="z" value="$(arg z)"/>
+		<arg name="world" value="$(arg world)"/>
+  </include> 
+</launch>

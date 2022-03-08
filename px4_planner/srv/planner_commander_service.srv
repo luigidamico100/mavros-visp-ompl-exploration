@@ -1,0 +1,11 @@
+uint8 land_mask
+uint8 NO_LAND = 0
+uint8 LAND = 1
+uint8 QR_CODE_LAND = 2
+
+float32 x
+float32 y
+int32 qr_code
+
+---
+bool completed

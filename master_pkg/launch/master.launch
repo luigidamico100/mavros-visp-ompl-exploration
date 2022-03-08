@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<launch>
+
+  <arg name="lenght_x" default="20"/>
+  <arg name="lenght_y" default="10"/>
+  <arg name="size_uav" default="1.3"/>
+  <arg name="lenght_stride" default="2.5"/>
+  <arg name="_tot_number_qr_code" default="7"/>
+	
+	<arg name="output" default="screen"/>
+  <include file="$(find master_pkg)/launch/tf_trasform.launch" />
+
+  <node pkg="master_pkg" name="master_exe" type="master_exe" output="$(arg output)" respawn="true">
+  	<param name="lenght_x" value="$(arg lenght_x)"/>
+		<param name="lenght_y" value="$(arg lenght_y)"/>
+		<param name="size_uav" value="$(arg size_uav)"/>
+		<param name="lenght_stride" value="$(arg lenght_stride)"/>
+		<param name="_tot_number_qr_code" value="$(arg _tot_number_qr_code)"/>
+  </node>
+
+
+</launch>
